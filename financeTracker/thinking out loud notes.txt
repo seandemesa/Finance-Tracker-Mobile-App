@@ -1,0 +1,54 @@
+
+on login (which navs to calendar) or on calendar load we will make 1 call to DB for all payment info logged in user
+	compared to pressing a day and calling to DB for specific day info
+
+	PROS: minimizes calls to DB
+	CONS: if user has alot of info may take longer to parse
+	i think, however, given the nature of the app, the single call to DB outweighs the potential amount of info parsing needed for a single user
+
+take all paymentInfo[] for specific user and store in useState and/or asyncStorage
+
+on daypress, look through paymentInfo[] and navigate to specific day with specific day info from paymentInfo as params
+
+on new recurring payment input
+
+
+on calender: check if there exists any recurring payments
+if so{
+	check paymentInfo[] array if there is a match (i.e. name, payment, isRecurringPayment)
+	if so{
+		do nothing
+	}
+	else{
+		insert new payment into database
+		add to paymentInfo[]
+	}
+
+}
+else{
+	do nothing
+}
+-------------
+
+
+probably get rid of setneedtorefreshyourprofile stuff in yourprofile.js
+current issues (7/21/2021)
+- on addition of new recurring payment, takes 2 "resets" for it to effectively show up in calendar UI
+
+------
+
+(7/22/2021)
+
+- change how useeffect is ran with "refresh" global async variables
+hypothesis: since useState is async, we can run await getItem and assign as variable and use that to check inside useffect
+to see if we should re-run page rather than the complicated listener. this way i actually understand it and its more intuitive (i think)
+
+- or, change the "setData" parts from yourProfile & calendar and add that in login instead and remove the navigation listener bullcrap
+while making the useEffect's 2nd arguments based off the main content arrays (e.g. delete something from 7-22-2021, it updates 
+paymentInfo array (i.e. "content" array) then trigger useEffect (new render))
+
+-------
+(7/23/2021)
+
+- when new addition of recurring payment is made, data for all payments not showing up in calendar except the new payment. dots show up on respective
+dates tho

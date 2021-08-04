@@ -1,0 +1,197 @@
+what i have:
+
+(7/12/2021) [Monday]
+- calendar via react native calendar wix
+
+- upon day press, navigates to another screen with pressed day's date as title
+
+- working dummy fetch call with day press
+
+
+(7/13/2021) [Tuesday]
+- mongoDB DB & collection (table) is up, running, and connected to server
+
+- multiple fetch calls work
+
+- can retrieve data from DB & insert hardcoded data but not insert data thats been sent from client / front-end
+
+
+(7/14/2021) [Wednesday]
+- modal is up, has form and a close button
+
+- on day press will retrieve info of day from DB
+
+- can submit from modal to DB; following submission page is re-rendering with new submission
+
+
+(7/15/2021) [Thursday]
+- userInfo collection in DB
+
+- upon insertion to DB, password is encrypted on server, and can be validated upon request (i.e. login)
+
+- login page & create account page w/ above code (but with minimal validation)
+
+
+(7/16/2021) [Friday]
+- drawer navigator works with stack navigator, has replaced stack as main
+
+- fixed problems with navigators (decent amount)
+
+- log out button 
+
+
+(7/18/2021) [Sunday]
+-username stored in async storage
+
+-simple query for amount spent for current month
+
+
+(7/19/2021) [Monday]
+- header & button to open drawer (separate button for "mainStack" but feels and works normally)
+
+- modal to create recurring payment submission which inserts into new DB "recurringPayments"
+
+- alot of mental problem solving (such as to accomplish established code but with less calls to DB overall and only when necessary)
+	- (laid foundation to eventually add recurring payment to proper DB)
+	- (laid foundation to eventually have marked dates on calendar)
+
+
+ (7/20/2021) [Tuesday]
+- recurring payment will add into paymentInfo collection upon new recurring payment
+
+- automatic payment submissions
+
+- marked dates on calendar for payments (1 dot color for regular payments, another for re-occuring, etc.)
+
+
+(7/21/2021) [Wednesday]
+
+- change how data is handled w/ calendar (i.e. not with a fetch but from the data gathered from the 1 big fetch)
+
+- edit button for payments
+
+- show existing recurring payments in your profile
+
+- new recurring payment will not only add into paymentInfo collection but now show on calendar with marked dates
+
+- changed submitPayment from modal on dayInfo.js to its own screen. not sure if it was necessary but it works *shrug*
+
+
+(7/22/2021) [Thursday]
+
+- some documentation 
+
+- new input design for login & createAccount (buttons still same)
+
+- editing payments is more responsive (i.e. no need for "reset")
+
+- payments on day are more organized via ListItem and swipeable element to edit. recurring payments also have "loop" icon
+to signify recurring payment
+
+- included a "total spent on day" for dayInfo (new route.param)
+
+- recurring payments on yourProfile.js are more organized via ListItem
+
+- delete option for regular payments (responsive)
+
+
+(7/23/2021) [Friday]
+
+- cleaned up code slightly by moving creation of "needToRefreshCalendar" & "needToRefreshYourProfile" to login
+
+- bug fixing (new recurring payment will add payment and show on calendar along w/ appropriate dots)
+
+
+(7/24/2021) [Saturday]
+
+- edit & delete option for recurring payments w/ option to edit/delete, respectively, the payment for the current month
+
+
+(7/25/2021) [Sunday]
+
+- dots fixed (have a recurring payment be dominant over regular)
+
+- some more documentation
+
+
+(7/26/2021) [Monday] (2 WEEK MARK)
+
+- prevent adding / editing recurring payments that already exist
+
+- updated inputs for recurring payment modal and fixed keyboard not covering up inputs in submitPayment & recurringPayment
+
+- replaced notifications page with "search" page which allows uer to search for amount spent on X (e.g. starbucks) within
+ 2 specific dates
+
+
+------------------------
+***ABOUT A WEEK BREAK***
+------------------------
+
+
+
+(8/1/2021) [Sunday] 
+[BUG FIXING BASICALLY]
+- fixed bug of dots not working unless u had recurring payment (fix: assign dates w/ marked payments array regardless if there is a recurring
+payment or not
+
+- fixed payment of day to be responsive on edit/add (already worked on delete)
+
+- made current amount payed for month in your profile work w/ recurring payments
+
+- fixed update to not only check by id if its a new addition ( because at that point we hadn't
+retrieved the item's ID) [need to fix for update on recurringP & delete's]
+
+
+
+(8/2/2021) [Monday]
+[MORE BUG FIXING]
+- made insertion of "month" more consistent across the board (i.e. if its below 10, it should enter just the number
+but add the 0 for the date string(e.g. month: 8, date: 2021-08-XX))
+
+- amount payed for this month on your profile now responsive
+(fix: i only relied on getting the amount thru the initial fetch but most times i changed the array
+"recurring payments" i also did for monthlyAmountPayed, idk why i hadn't before, i forgot when you add a
+reccuring payment it doesn't add payment to paymentInfo till back on calendar)
+
+- update now works on a brand new payment without having to go back to calendar 
+(had to mess w/ queries & ID since if you make 1 and try to delete/update prior to going to calendar,
+it didn't have an id to check for but now we have temp which is the actual one )
+
+- fixed bug where when you tried to add a new payment after a deletion it wouldnt show up, but after 
+calendar then go back it shows up (needed to send over right array to submitPayment)
+
+- fixed bug where deleting a recurring payment after updating it then subsequently deleting its payment
+from current month wouldn't delete from paymentInfo but did in recurringPayments (because when I thought
+all months were consistent across the board (see first bug fix of this day) it wasnt...)
+
+- FINALLY fixed bug where if you tried to edit a payment immediately after addition it would update, but then if you went to calendar
+it was still the old data, and when you went back to your profile it was also still old data (had2 mess around with the return value
+of the "insertedID" from the result of the fetch call )
+
+- fixed update recurring payment with new parentID
+
+
+
+- KNOWN BUG I DONT REALLY WANT TO FIX: when you add a recurring payment, then subsequently delete it,
+and choose option to not delete payment in current month, monthly amount spent stays the same, but
+we never added anything to DB in the first place.
+
+
+
+first addition of new recurring payment doubling in cur amt payed for month???
+
+
+what's next: (in terms of importance)
+
+- organize payments on day by payment, or by time, etc.
+
+- more documentation
+
+- validation on payment submission forms & for login
+
+- look pretty (cards, fonts, buttons, headers, etc.)
+
+- custom notifications if surpassed over X dollars (in general or on something specific like coffee for example)
+
+- custom queries??? (e.g. check amount payed from date X to date Y)

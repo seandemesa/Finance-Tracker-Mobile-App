@@ -1,0 +1,53 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "@expo-google-fonts/inter": "^0.2.0",
+    "@expo/vector-icons": "^12.0.5",
+    "@react-native-async-storage/async-storage": "^1.15.5",
+    "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-community/datetimepicker": "^3.5.2",
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-native-picker/picker": "^1.16.3",
+    "@react-navigation/drawer": "^5.12.5",
+    "@react-navigation/native": "^5.9.4",
+    "@react-navigation/stack": "^5.14.5",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "expo": "~42.0.1",
+    "expo-font": "~9.2.1",
+    "expo-status-bar": "~1.0.4",
+    "express": "^4.17.1",
+    "formik": "^2.2.9",
+    "mongodb": "^4.0.0",
+    "mongoose": "^5.13.2",
+    "nodemon": "^2.0.12",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-calendars": "^1.1264.0",
+    "react-native-date-picker": "^3.3.2",
+    "react-native-datepicker": "^1.7.2",
+    "react-native-elements": "^3.4.2",
+    "react-native-gesture-handler": "~1.10.2",
+    "react-native-modern-datepicker": "^1.0.0-beta.91",
+    "react-native-reanimated": "~2.2.0",
+    "react-native-safe-area-context": "^3.2.0",
+    "react-native-screens": "~3.4.0",
+    "react-native-vector-icons": "^8.1.0",
+    "react-native-web": "~0.13.12",
+    "react-native-woodpicker": "^0.3.9",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0"
+  },
+  "private": true
+}

@@ -1,0 +1,68 @@
+TESTING
+
+for regular payments:
+
+- add payment
+
+- add payment --> calendar --> go back & update
+
+- add payment --> calendar --> go back & delete
+
+- add payment --> update
+
+- add payment --> delete
+
+- add payment --> add payment --> add payment --> calendar --> delete 1 payment --> update 1 payment
+
+- add payment --> delete payment --> add payment
+
+
+for recurring payments:
+
+- add recur payment
+
+- add recur payment --> calendar --> update (with current month)
+
+- add recur payment --> calendar --> delete (with current month)
+
+- add recur payment --> update
+
+- add recur payment --> delete [has bug for monthly amt payed im pretty sure)
+
+- add recur payment --> add recur payment --> calendar --> delete 1 payment (w.o curr month) --> update 1 payment (with curr month)
+
+- add recur payment --> delete --> add recur payment
+
+- add recur payment --> calendar --> add recur payment --> update
+
+
+FOR DEMO:
+
+- Create account --> Login
+
+- Open drawer --> Close drawer
+
+- add payment (Coffee - 4.67 - Chase) --> add payment (Groceries 24.59 - Capital One) [same day]
+
+- new day --> add payment (Coffee 4.67 - Chase) --> add payment (Headphones - 150 - Amex) --> add payment (Phone Charger - 10.90 - Amex)
+
+- Your Profile page --> create recurring payment (Netflix - 7.99 - Chase) (20th) --> create recurring payment (Gym - 50 - Amex) (10th)
+
+- calendar, view netflix pay --> view gym pay --> update gym (10-->15 day, 50-->60 price) (along w/ current month) --> delete netflix (don't delete on month)
+
+- update Headphones payment (price --> 160) --> delete Phone Charger payment
+
+- search page --> search for coffee from july to september
+
+
+
+
+
+
+
+
+
+
+
+
+
